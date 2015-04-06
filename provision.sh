@@ -1,4 +1,8 @@
+#!/bin/bash
 # v0.1 Initial - Install nodejs for node school.
+
+# Proxy
+[ -f /vagrant/donotcopy/proxy.env ] && source /vagrant/donotcopy/proxy.env
 
 # Install Pre Requirement Packages
 yum install -y libaio git gcc gcc-c++ autoconf automake
