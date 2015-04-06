@@ -7,8 +7,6 @@ Vagrant.configure(2) do |config|
     nodejs.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--memory", 1024]
     end
-    nodejs.vm.network "private_network", ip: "192.168.33.12"
-    nodejs.vm.network "forwarded_port", guest: 7099, host: 7099
-    nodejs.vm.provision :shell, path: "provision.sh"
+    nodejs.vm.provision :shell, inline: "/vagrant/provision.sh"
   end
 end
